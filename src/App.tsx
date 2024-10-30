@@ -1,9 +1,17 @@
-import Toggle from "./components/toggle/toggle"
+import { ItemProvider } from '@/hooks/app'
+import Sidebar from '@/components/sidebar/sidebar'
+import Manager from '@/components/manager/manager'
+
+
 
 export default function App() {
   return (
-    <div className='flex flex-col'>
-      <Toggle/>
-    </div>
+    <ItemProvider>
+      <div className="flex flex-col sm:flex-row ">
+        <Sidebar />
+        <Manager />
+      </div>
+    </ItemProvider>
   )
 }
+
