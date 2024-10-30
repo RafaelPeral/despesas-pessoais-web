@@ -1,1 +1,1 @@
-export type ItemType = string
+export type ItemType = any
