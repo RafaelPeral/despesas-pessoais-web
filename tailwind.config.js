@@ -8,7 +8,6 @@ export default {
             'primary': 'var(--color-primary)',
             'secondary': 'var(--color-secondary)',
             'tertiary': 'var(--color-tertiary)',
-
             'primary-reverse': 'var(--color-primary-reverse)',
             'secondary-reverse': 'var(--color-secondary-reverse)',
             'tertiary-reverse': 'var(--color-tertiary-reverse)',
