@@ -46,6 +46,7 @@ const FormaPagamentoBarChart = ({ data }: FormaPagamentoBarChartProps) => {
             <BarChart data={data}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey='nome' />
+              <YAxis />
               <ChartTooltip content={<ChartTooltipContent />} />
               <Legend />
               <Bar dataKey='total' fill='var(--color-total)' name="Total" />
