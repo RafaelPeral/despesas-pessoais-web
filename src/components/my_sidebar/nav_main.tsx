@@ -1,37 +1,43 @@
-import { CreditCard, Folder, Plus, Trash2, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { NavItem } from "@/types/my_sidebar/my_sidebar_nav_item";
+import Receitas from "./add/receitas";
+import Geral from "./add/geral";
+import FormaPagamento from "./add/forma_pagamento";
+import Despesas from "./add/despesas";
+import CategoriaReceita from "./add/categoria_receitas";
+import CategoriaDespesa from "./add/categoria_despesas";
 
 export const navMain: NavItem[] = [
     { 
         title: "Geral", 
-        icon: <Folder size={20} />, 
+        icon: <ChevronRight size={20} />, 
         isActive: true, 
-        items: <p>teste</p>
+        items: <Geral/>
     },
     { 
         title: "Receitas", 
-        icon: <Plus size={20} />, 
-        items: <p>teste</p>
+        icon: <ChevronRight size={20} />, 
+        items: <Receitas/>
     },
     { 
         title: "Despesas", 
-        icon: <Trash2 size={20} />, 
-        items: <p>teste</p>
+        icon: <ChevronRight size={20} />, 
+        items: <Despesas/>
     },
     { 
         title: "Categorias de Receitas", 
         icon: <ChevronRight size={20} />, 
-        items: <p>teste</p>
+        items: <CategoriaReceita/>
     },
     { 
         title: "Categorias de Despesas", 
         icon: <ChevronRight size={20} />, 
-        items: <p>teste</p>
+        items: <CategoriaDespesa/>
     },
     { 
         title: "Formas de Pagamento", 
-        icon: <CreditCard size={20} />, 
-        items: <p>teste</p>
+        icon: <ChevronRight size={20} />, 
+        items: <FormaPagamento/>
     },
 ];
 

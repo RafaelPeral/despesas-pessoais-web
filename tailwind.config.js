@@ -5,6 +5,7 @@ export default {
   theme: {
   	extend: {
   		colors: {
+			'base-subreader': '#7F7E7E',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

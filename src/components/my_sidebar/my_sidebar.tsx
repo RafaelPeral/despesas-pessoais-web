@@ -1,4 +1,3 @@
-// src/components/my_sidebar/MySidebar.tsx
 import { SidebarProvider, Sidebar, SidebarHeader, SidebarTrigger } from "@/components/ui/sidebar";
 import { useMySidebar } from "@/hooks/my_sidebar/my_sidebar_use_my_sidebar";
 import MySidebarContent from "@/components/my_sidebar/my_sidebar_content";
@@ -8,8 +7,6 @@ import MobileSidebar from "./mobile";
 
 export default function MySidebar() {
     const { open, setOpen } = useMySidebar();
-
-    
 
     return (
         <SidebarProvider open={open} onOpenChange={setOpen}>

@@ -29,10 +29,11 @@ export default function MySidebarFooter({ userName, src_avatar, github, email, l
                   size="lg"
                   className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
                 >
-                  <Avatar className="h-8 w-8 rounded-lg">
+                  <Avatar className="h-8 w-8">
                     <AvatarImage
                       src={src_avatar}
                       alt={userName + " avatar"}
+                      className="rounded-full"
                     />
                     <AvatarFallback className="rounded-lg text-lg">{userInitials}</AvatarFallback>
                   </Avatar>

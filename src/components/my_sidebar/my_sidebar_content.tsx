@@ -8,7 +8,7 @@ export default function MySidebarContent() {
     return (
         <SidebarGroup className="h-full">
             <SidebarGroupLabel>Platform</SidebarGroupLabel>
-            <SidebarMenu>
+            <SidebarMenu className="h-full max-h-fit overflow-auto ">
                 {navMain.map((item) => (
                     <div key={item.title}>
                         <Collapsible asChild defaultOpen={item.isActive}>
