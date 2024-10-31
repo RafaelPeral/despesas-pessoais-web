@@ -2,7 +2,7 @@ import getCategoriaReceitas from "@/hooks/categoria_receitas/get_categoria_recei
 import { CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { MyDataTable } from "@/components/my_data_table/my_data_teble";
 
-export default function CategoriaReceitaDatatable() {
+export default function CardCategoriaReceitaDatatable() {
     const data = getCategoriaReceitas().data.data;
 
     return (

@@ -2,7 +2,7 @@ import getCategoriaDespesas from "@/hooks/categoria_despesas/get_categoria_despe
 import { CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { MyDataTable } from "@/components/my_data_table/my_data_teble";
 
-export default function CategoriaDespesaDatatable() {
+export default function CardCategoriaDespesaDatatable() {
     const data = getCategoriaDespesas().data.data;
 
     return (

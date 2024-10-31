@@ -1,11 +1,11 @@
 import { PlusSquareIcon } from "lucide-react"
 import Add from "./add"
-import CategoriaDespesaDatatable from "@/components/cards/categoria_despesa/categoria_despesa_datatable"
+import CardCategoriaDespesaDatatable from "@/components/cards/categoria_despesa/card_categoria_despesa_datatable"
 
 export default function CategoriaDespesas() {
     return (
         <div>
-            <Add add={<CategoriaDespesaDatatable/>}>
+            <Add add={<CardCategoriaDespesaDatatable/>}>
                 Adicionar Tabela de Categorias de Despesas
             </Add>
             <Add>
