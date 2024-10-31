@@ -1,11 +1,11 @@
 import { PlusSquareIcon } from "lucide-react"
-import FormaPagamento_DataTable from '../../cards/forma_pagamento/forma_pagamento_datatable'
+import FormaPagamentoDatatable from '../../cards/forma_pagamento/forma_pagamento_datatable'
 import Add from "./add"
 
 export default function FormaPagamento() {
     return (
         <div>
-            <Add add={<FormaPagamento_DataTable/>}>
+            <Add add={<FormaPagamentoDatatable/>}>
                 Adicionar Tabela de Formas de Pagamento
             </Add>
             <Add>

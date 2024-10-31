@@ -1,5 +1,5 @@
 import formapagamento from "@/mocks/forma_pagamento/forma_pagamento"
 
-export function getdata() {
+export function getFormaPagamento() {
     return formapagamento()
 }

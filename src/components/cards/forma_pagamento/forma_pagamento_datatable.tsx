@@ -1,9 +1,9 @@
-import { getdata } from "@/hooks/forma_pagamento/datatable";
+import { getFormaPagamento } from "@/hooks/forma_pagamento/get_forma_pagamento";
 import { MyDataTable } from "@/components/my_data_table/my_data_teble";
 import { CardHeader, CardContent, CardDescription } from "@/components/ui/card";
 
-export default function FormaPagamentoTable() {
-    const data = getdata().data.data;
+export default function FormaPagamentoDatatable() {
+    const data = getFormaPagamento().data.data;
 
     return (
         <>
