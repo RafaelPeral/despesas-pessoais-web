@@ -115,7 +115,7 @@ export default function MySidebar() {
             <Sidebar collapsible="icon">
                 <SidebarHeader className="flex flex-row items-center justify-between p-4">
                     <SidebarTrigger />
-                    <Toggle/>
+                    {open && <Toggle/>}
                 </SidebarHeader>
                 <SidebarContent>
                     <SidebarGroup>
