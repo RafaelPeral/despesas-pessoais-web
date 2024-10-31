@@ -1,5 +1,4 @@
-// src/components/my_sidebar/MySidebarContent.tsx
-import { SidebarGroup, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarMenuSub, SidebarMenuSubItem, SidebarMenuSubButton, SidebarGroupLabel } from "@/components/ui/sidebar";
+import { SidebarGroup, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarMenuSub, SidebarGroupLabel } from "@/components/ui/sidebar";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { navMain } from "@/components/my_sidebar/nav_main";
 import { ChevronRight } from "lucide-react";

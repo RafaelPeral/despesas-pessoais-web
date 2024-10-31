@@ -1,4 +1,3 @@
-// my_data_table_use_sortable_table.ts
 import { useState } from "react";
 import { MyDataTableSortConfig } from "@/types/my_data_table/my_data_table_sort_config";
 

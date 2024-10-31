@@ -2,8 +2,6 @@ import { ItemProvider } from '@/hooks/app'
 import MySidebar from '@/components/my_sidebar/my_sidebar'
 import Manager from '@/components/manager/manager'
 
-
-
 export default function App() {
   return (
     <ItemProvider>

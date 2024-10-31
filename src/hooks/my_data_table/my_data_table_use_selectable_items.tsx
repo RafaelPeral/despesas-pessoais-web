@@ -1,4 +1,3 @@
-// my_data_table_use_selectable_items.ts
 import { useState } from "react";
 
 export function useMyDataTableSelectable<T extends { id: number }>(data: T[]) {

@@ -1,7 +1,6 @@
 import { createContext, ReactNode, useState, useContext } from 'react'
 import { ItemType } from '../types/item'
 
-
 interface ItemContextType {
     item: ItemType[]
     addItem: (newItem: ItemType) => void

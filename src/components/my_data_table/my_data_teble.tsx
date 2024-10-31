@@ -1,4 +1,3 @@
-// MyDataTable.tsx
 import { Button } from "@/components/ui/button";
 import { Table } from "@/components/ui/table";
 import { MyDataTableProps } from "@/types/my_data_table/my_data_table_props";

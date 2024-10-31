@@ -1,4 +1,3 @@
-// my_data_table_header.tsx
 import { TableCell, TableRow } from "@/components/ui/table";
 import { MyDataTableHeaderProps } from "@/types/my_data_table/my_data_table_header_props";
 
