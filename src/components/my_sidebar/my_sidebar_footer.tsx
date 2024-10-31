@@ -1,30 +1,101 @@
 import { SidebarFooter } from "@/components/ui/sidebar";
 import { MySidebarFooterProps } from "@/types/my_sidebar/my_sidebar_footer_props";
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import { 
+    DropdownMenu, 
+    DropdownMenuContent,
+    DropdownMenuItem, 
+    DropdownMenuSeparator, 
+    DropdownMenuTrigger, 
+} from "@/components/ui/dropdown-menu";
 
-export default function MySidebarFooter({ userName, userInitials, isOpen }: MySidebarFooterProps) {
+import { 
+    SidebarMenu, 
+    SidebarMenuItem, 
+    SidebarMenuButton 
+} from "@/components/ui/sidebar";
+
+import { Github, Instagram, Mail, MessageCircle, ChevronsUpDown, Linkedin } from "lucide-react"
+
+export default function MySidebarFooter({ userName, src_avatar, github, email, linkedin, instagram, telegram, open }: MySidebarFooterProps) {
+    const userInitials = userName.split(' ').map(name => name.charAt(0)).join('');
     return (
-        <SidebarFooter className="flex flex-col items-center p-4 border-t bg-purple-600 rounded-t-lg cursor-pointer transition-colors duration-300 hover:bg-purple-700">
-            <a 
-                href="https://github.com/RafaelPeral"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center"
-            >
-                {isOpen ? (
-                    <img 
-                        src="https://avatars.githubusercontent.com/u/168774687?v=4" 
-                        alt="User Avatar"
-                        className="w-10 h-10 rounded-full mb-2"
-                    />
-                ) : (
-                    <div className="w-10 h-10 flex items-center justify-center rounded-full bg-zinc-900 text-white font-semibold">
-                        {userInitials}
-                    </div>
-                )}
-                {isOpen && (
-                    <span className="text-sm text-white font-semibold">{userName}</span>
-                )}
-            </a>
+        <SidebarFooter>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <SidebarMenuButton
+                    size="lg"
+                    className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+                  >
+                    <Avatar className="h-8 w-8 rounded-lg">
+                      <AvatarImage
+                        src={src_avatar}
+                        alt={userName + " avatar"}
+                      />
+                      <AvatarFallback className="rounded-lg text-lg">{userInitials}</AvatarFallback>
+                    </Avatar>
+                    {open && 
+                        <div className="flex items-center justify-between w-full">
+                            <div className="grid flex-1 text-left text-sm leading-tight">
+                                <span className="truncate font-semibold">
+                                    {userName}
+                                </span>
+                                <span className="truncate text-xs">
+                                    {email}
+                                </span>
+                            </div>
+                            <ChevronsUpDown className="ml-auto size-4" />
+                        </div>
+                    }
+                  </SidebarMenuButton>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent
+                  className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
+                  side="bottom"
+                  align="end"
+                  sideOffset={4}
+                >
+                    <a href={github} target="_blank">
+                        <DropdownMenuItem>
+                            <Github />
+                            <p>My Github</p>
+                            <span></span>
+                        </DropdownMenuItem>
+                    </a>
+                    <DropdownMenuSeparator/>
+                    <a href={"mailto:" + email} target="_blank">
+                        <DropdownMenuItem>
+                            <Mail />
+                            <p>My Email</p>
+                        </DropdownMenuItem>
+                    </a>
+                    <DropdownMenuSeparator/>
+                    <a href={linkedin} target="_blank">
+                        <DropdownMenuItem>
+                            <Linkedin />
+                            <p>My Linkedin</p>
+                        </DropdownMenuItem>
+                    </a>
+                    <DropdownMenuSeparator/>
+                    <a href={instagram} target="_blank">
+                        <DropdownMenuItem>
+                            <Instagram />
+                            <p>My Instagram</p>
+                        </DropdownMenuItem>
+                    </a>
+                    <DropdownMenuSeparator/>
+                    <a href={telegram} target="_blank">
+                        <DropdownMenuItem>
+                            <MessageCircle />
+                            <p>My Telegram</p>
+                        </DropdownMenuItem>
+                    </a>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </SidebarMenuItem>
+          </SidebarMenu>
         </SidebarFooter>
     );
 }

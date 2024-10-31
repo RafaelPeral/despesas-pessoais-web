@@ -13,7 +13,7 @@ export default function MySidebarContent() {
                 {navMain.map((item, index) => (
                     <div key={item.title}>
                         <Collapsible asChild defaultOpen={item.isActive}>
-                            <SidebarMenuItem className="hover:bg-gray-200 transition-all duration-200">
+                            <SidebarMenuItem>
                                 <CollapsibleTrigger asChild>
                                     <SidebarMenuButton tooltip={item.title}>
                                         {item.icon}
