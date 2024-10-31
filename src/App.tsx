@@ -1,5 +1,5 @@
 import { ItemProvider } from '@/hooks/app'
-import MySidebar from '@/components/sidebar/sidebar'
+import MySidebar from '@/components/my_sidebar/my_sidebar'
 import Manager from '@/components/manager/manager'
 
 
