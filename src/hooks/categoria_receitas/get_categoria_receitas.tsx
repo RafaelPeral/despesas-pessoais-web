@@ -1,5 +1,5 @@
-import categoria_refceitas from "@/mocks/categoria_receitas/categoria_receitas";
+import { getAPICategoriaReceita } from "@/utils/api/apicore";
 
-export default function getCategoriaReceitas() {
-    return categoria_refceitas()
+export default async function getCategoriaReceitas() {
+    return await getAPICategoriaReceita()
 }

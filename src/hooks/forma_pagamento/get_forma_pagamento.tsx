@@ -1,5 +1,5 @@
-import formapagamento from "@/mocks/forma_pagamento/forma_pagamento"
+import { getAPIFormaPagamento } from "@/utils/api/apicore"
 
-export function getFormaPagamento() {
-    return formapagamento()
+export default async function getFormaPagamento() {
+    return await getAPIFormaPagamento()
 }

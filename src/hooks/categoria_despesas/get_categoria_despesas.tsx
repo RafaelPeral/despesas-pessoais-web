@@ -1,5 +1,5 @@
-import categoria_despesas from "@/mocks/categoria_despesas/categoria_despesas";
+import { getAPICategoriaDespesa } from "@/utils/api/apicore"
 
-export default function getCategoriaDespesas() {
-    return categoria_despesas()
+export default async function getCategoriaDespesas() {
+    return await getAPICategoriaDespesa()
 }
