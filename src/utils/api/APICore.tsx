@@ -29,3 +29,23 @@ export const getAPICategoriaDespesa = async () => {
         console.error(error);
     }
 }
+
+export const getAPIDespesa = async () => {
+    try {
+        const response = await fetch(`${BASE_PATH}/despesa`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export const getAPIReceita = async () => {
+    try {
+        const response = await fetch(`${BASE_PATH}/receita`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error(error);
+    }
+}

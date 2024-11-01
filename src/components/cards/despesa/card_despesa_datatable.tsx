@@ -1,25 +1,25 @@
-import getFormaPagamento from "@/hooks/forma_pagamento/get_forma_pagamento";
+import getDespesa from "@/hooks/despesa/get_despesa";
 import { MyDataTable } from "@/components/my_data_table/my_data_teble";
-import { CardHeader, CardContent, CardDescription } from "@/components/ui/card";
-import FormaPagamentoProps from "@/types/forma_pagamento_props";
+import { CardContent, CardDescription, CardHeader } from "@/components/ui/card";
+import DespesaProps from "@/types/despesa_props";
 import { useEffect, useState } from "react";
 
-export default function CardFormaPagamentoDatatable() {
-    const [data, setData] = useState<FormaPagamentoProps[] | null>(null);
+export default function CardDespesaDatatable() {
+    const [data, setData] = useState<DespesaProps[] | null>(null);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const repo = await getFormaPagamento();
+                const repo = await getDespesa();
                 if (repo && repo.data) {
-                    setData(repo.data.data as FormaPagamentoProps[]);
+                    setData(repo.data.data as DespesaProps[]);
                 } else {
                     setError("Dados não encontrados.");
                 }
             } catch (err) {
-                console.error("Erro ao buscar formas de pagamento:", err);
-                setError("Erro ao carregar dados das formas de pagamento.");
+                console.error("Erro ao buscar despesas:", err);
+                setError("Erro ao carregar dados das despesas.");
             }
         };
 
@@ -45,7 +45,7 @@ export default function CardFormaPagamentoDatatable() {
     if (data.length === 0) {
         return (
             <CardHeader>
-                <CardDescription>Nenhum dado encontrado.</CardDescription>
+                <CardDescription>Nenhuma despesa encontrada.</CardDescription>
             </CardHeader>
         );
     }
@@ -53,17 +53,15 @@ export default function CardFormaPagamentoDatatable() {
     return (
         <>
             <CardHeader>
-                <CardDescription>Forma de Pagamento</CardDescription>
+                <CardDescription>Despesas</CardDescription>
             </CardHeader>
             <CardContent>
                 <MyDataTable
-                    columns={["id", "name", "receita", "despesa", "total"]}
+                    columns={["id", "categoria", "name", "valor", "date", "forma_pagamento_name"]}
                     data={data}
-                    onDeleteSelected={(deletedItems) => {
-                        deletedItems.forEach(item => console.log(`Deleted: ${item.name}`));
-                    }}
+
                 />
             </CardContent>
         </>
-    );
+    )
 }
