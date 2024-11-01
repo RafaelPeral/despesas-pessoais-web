@@ -4,7 +4,7 @@ import FormaPagamentoBarChart from "@/components/charts/forma_pagamento/forma_pa
 
 export default function CardFormaPagamentoBarChart() {
     const data = getFormaPagamento().data.data;
-    console.log(data)
+    
     return (
         <>
             <CardHeader>

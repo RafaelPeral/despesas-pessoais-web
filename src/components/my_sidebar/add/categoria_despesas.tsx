@@ -1,6 +1,7 @@
 import { PlusSquareIcon } from "lucide-react"
 import Add from "./add"
 import CardCategoriaDespesaDatatable from "@/components/cards/categoria_despesa/card_categoria_despesa_datatable"
+import CardCategoriaDespesaBarChart from "@/components/cards/categoria_despesa/card_categoria_despesa_bar_chart"
 
 export default function CategoriaDespesas() {
     return (
@@ -8,7 +9,7 @@ export default function CategoriaDespesas() {
             <Add add={<CardCategoriaDespesaDatatable/>}>
                 Adicionar Tabela de Categorias de Despesas
             </Add>
-            <Add>
+            <Add add={<CardCategoriaDespesaBarChart />}>
                 Adicionar Grafico de Barras
             </Add>
             <div

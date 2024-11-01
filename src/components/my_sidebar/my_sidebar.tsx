@@ -20,7 +20,7 @@ export default function MySidebar() {
                     userName="Rafael Peral"
                     src_avatar="https://avatars.githubusercontent.com/u/168774687?v=4"
                     github="https://github.com/RafaelPeral" 
-                    email="rafaelperal@gmail.com" 
+                    email="rafaelvenet@gmail.com" 
                     linkedin="https://www.linkedin.com/in/rafael-peral-83438a278" 
                     instagram="https://www.instagram.com/rafaelvenet/" 
                     telegram="https://t.me/RafaelPeral" 

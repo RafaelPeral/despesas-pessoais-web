@@ -21,7 +21,6 @@ interface FormaPagamentoBarChartProps {
 const FormaPagamentoBarChart = ({ data }: FormaPagamentoBarChartProps) => {
   const { chartRef, exportChart } = useChartExport();
 
-  // Configurações do gráfico
   const chartConfig: ChartConfig = {
     total:{
       label: "Total",
@@ -36,10 +35,10 @@ const FormaPagamentoBarChart = ({ data }: FormaPagamentoBarChartProps) => {
       color: "#ff4d4d",
     },
   }
-  console.log(data)
+
   return (
     <CardContent className="p-4">
-      <h2 className="text-xl font-semibold mb-4">Gráfico de Receitas e Despesas</h2>
+      <h2 className="text-xl font-semibold mb-4">Gráfico de Forma de Pagamento</h2>
       <div ref={chartRef}>
         <ResponsiveContainer width="100%" height={400}>
           <ChartContainer config={chartConfig}>
