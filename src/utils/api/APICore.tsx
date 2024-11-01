@@ -49,3 +49,83 @@ export const getAPIReceita = async () => {
         console.error(error);
     }
 }
+
+export const addAPIReceita = async (data: any) => {
+    try {
+        const response = await fetch(`${BASE_PATH}/add_receita`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export const addAPIDespesa = async (data: any) => {
+    try {
+        const response = await fetch(`${BASE_PATH}/add_despesa`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export const addAPIFormaPagamento = async (data: any) => {
+    try {
+        const response = await fetch(`${BASE_PATH}/add_forma_pagamento`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export const addAPICategoriaReceita = async (data: any) => {
+    try {
+        const response = await fetch(`${BASE_PATH}/add_categoria_receita`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export const addAPICategoriaDespesa = async (data: any) => {
+    try {
+        const response = await fetch(`${BASE_PATH}/add_categoria_despesa`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        console.error(error);
+    }
+}

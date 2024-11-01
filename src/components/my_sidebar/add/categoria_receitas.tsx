@@ -1,4 +1,4 @@
-import { PlusSquareIcon } from "lucide-react"
+import AddCategoriaReceita from "@/components/adding/adding_categoria_receita"
 import Add from "./add"
 import CardCategoriaReceitaDatatable from "@/components/cards/categoria_receita/card_categoria_receita_datatable"
 import CardCategoriaReceitaBarChart from "@/components/cards/categoria_receita/card_categoria_receita_bar_chart"
@@ -12,12 +12,7 @@ export default function CategoriaReceita() {
             <Add add={<CardCategoriaReceitaBarChart />}>
                 Adicionar Grafico de Barras
             </Add>
-            <div
-                className='flex items-center gap-2 cursor-pointer p-2 text-sm'
-            >
-                <PlusSquareIcon size={30} className="min-w-5 max-w-5"/>
-                <p>Adicionar Categoria de Receita</p>
-            </div>
+            <AddCategoriaReceita />
         </div>
     )
 }
