@@ -62,7 +62,7 @@ export const addAPIReceita = async (data: any) => {
         const result = await response.json();
         return result;
     } catch (error) {
-        console.error(error);
+        return error;
     }
 }
 
@@ -78,7 +78,7 @@ export const addAPIDespesa = async (data: any) => {
         const result = await response.json();
         return result;
     } catch (error) {
-        console.error(error);
+        return error;
     }
 }
 
@@ -94,7 +94,7 @@ export const addAPIFormaPagamento = async (data: any) => {
         const result = await response.json();
         return result;
     } catch (error) {
-        console.error(error);
+        return error;
     }
 }
 
@@ -110,7 +110,7 @@ export const addAPICategoriaReceita = async (data: any) => {
         const result = await response.json();
         return result;
     } catch (error) {
-        console.error(error);
+        return error;
     }
 }
 
@@ -126,6 +126,6 @@ export const addAPICategoriaDespesa = async (data: any) => {
         const result = await response.json();
         return result;
     } catch (error) {
-        console.error(error);
+        return error;
     }
 }
