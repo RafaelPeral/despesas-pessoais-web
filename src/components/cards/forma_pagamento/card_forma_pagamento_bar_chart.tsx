@@ -1,4 +1,4 @@
-import getFormaPagamento from "@/hooks/forma_pagamento/get_forma_pagamento";
+import getFormaPagamento from "@/hooks/forma_pagamento/useGetFormaPagamento";
 import { CardHeader, CardDescription } from "@/components/ui/card";
 import FormaPagamentoBarChart from "@/components/charts/forma_pagamento/forma_pagamento_bar_chart";
 import { useEffect, useState } from "react";

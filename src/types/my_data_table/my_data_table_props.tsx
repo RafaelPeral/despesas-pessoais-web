@@ -1,5 +1,5 @@
 export interface MyDataTableProps<T> {
     columns: (keyof T)[];
-    data: T[];
+    data: any[];
     onDeleteSelected?: (selectedItems: T[]) => void;
 }

@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react'
 import { useItem } from '@/hooks/app'
 import { Card, CardFooter } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
 
 
 export const Carde: React.FC<{ content: ReactElement, index: number }> = React.memo(({ content, index }) => {
@@ -9,7 +10,7 @@ export const Carde: React.FC<{ content: ReactElement, index: number }> = React.m
         <Card>
             {content}
             <CardFooter>
-                <button onClick={() => deleteItem(index)}>deletar</button>
+                <Button onClick={() => deleteItem(index)} variant="destructive">Excluir Card</Button>
             </CardFooter>
         </Card>
     )

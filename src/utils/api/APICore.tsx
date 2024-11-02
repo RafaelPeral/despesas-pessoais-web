@@ -129,3 +129,83 @@ export const addAPICategoriaDespesa = async (data: any) => {
         return error;
     }
 }
+
+export const deleteAPIReceita = async (data: any) => {
+    try {
+        const response = await fetch(`${BASE_PATH}/delete_by_name_receita`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        return error;
+    }
+}
+
+export const deleteAPIDespesa = async (data: any) => {
+    try {
+        const response = await fetch(`${BASE_PATH}/delete_by_name_despesa`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        return error;
+    }
+}
+
+export const deleteAPIFormaPagamento = async (data: any) => {
+    try {
+        const response = await fetch(`${BASE_PATH}/delete_by_name_forma_pagamento`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+        const result = await response.json();    
+        return result;
+    } catch (error) {
+        return error;
+    }
+}
+
+export const deleteAPICategoriaReceita = async (data: any) => {
+    try {
+        const response = await fetch(`${BASE_PATH}/delete_by_name_categoria_receita`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        return error;
+    }
+}
+
+export const deleteAPICategoriaDespesa = async (data: any) => {
+    try {
+        const response = await fetch(`${BASE_PATH}/delete_by_name_categoria_despesa`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        return error;
+    }
+}

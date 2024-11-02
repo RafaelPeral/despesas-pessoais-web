@@ -1,30 +1,11 @@
-import getReceita from "@/hooks/receita/get_receita";
+import useGetReceita from "@/hooks/receita/useGetReceita";
 import { MyDataTable } from "@/components/my_data_table/my_data_teble";
 import { CardContent, CardDescription, CardHeader } from "@/components/ui/card";
-import ReceitaProps from "@/types/receita_props";
-import { useEffect, useState } from "react";
+import { deleteAPIReceita } from "@/utils/api/APICore";
+
 
 export default function CardReceitaDatatable() {
-    const [data, setData] = useState<ReceitaProps[] | null>(null);
-    const [error, setError] = useState<string | null>(null);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const repo = await getReceita();
-                if (repo && repo.data) {
-                    setData(repo.data.data as ReceitaProps[]);
-                } else {
-                    setError("Dados não encontrados.");
-                }
-            } catch (err) {
-                console.error("Erro ao buscar receitas:", err);
-                setError("Erro ao carregar dados das receitas.");
-            }
-        };
-
-        fetchData();
-    }, []);
+    const [data, error ] = useGetReceita();
 
     if (error) {
         return (
@@ -49,7 +30,7 @@ export default function CardReceitaDatatable() {
             </CardHeader>
         );
     }
-
+    
     return (
         <>
             <CardHeader>
@@ -59,6 +40,9 @@ export default function CardReceitaDatatable() {
                 <MyDataTable 
                     columns={["id", "categoria", "name", "valor", "date", "forma_pagamento_name"]}
                     data={data} 
+                    onDeleteSelected={( i ) => {
+                        deleteAPIReceita(i)
+                    }}
                 />
             </CardContent>
         </>

@@ -1,30 +1,10 @@
-import getFormaPagamento from "@/hooks/forma_pagamento/get_forma_pagamento";
+import useGetFormaPagamento from "@/hooks/forma_pagamento/useGetFormaPagamento";
 import { MyDataTable } from "@/components/my_data_table/my_data_teble";
 import { CardHeader, CardContent, CardDescription } from "@/components/ui/card";
-import FormaPagamentoProps from "@/types/forma_pagamento_props";
-import { useEffect, useState } from "react";
+import { deleteAPIFormaPagamento } from "@/utils/api/APICore";
 
 export default function CardFormaPagamentoDatatable() {
-    const [data, setData] = useState<FormaPagamentoProps[] | null>(null);
-    const [error, setError] = useState<string | null>(null);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const repo = await getFormaPagamento();
-                if (repo && repo.data) {
-                    setData(repo.data.data as FormaPagamentoProps[]);
-                } else {
-                    setError("Dados não encontrados.");
-                }
-            } catch (err) {
-                console.error("Erro ao buscar formas de pagamento:", err);
-                setError("Erro ao carregar dados das formas de pagamento.");
-            }
-        };
-
-        fetchData();
-    }, []);
+    const [data, error] = useGetFormaPagamento();
 
     if (error) {
         return (
@@ -59,8 +39,8 @@ export default function CardFormaPagamentoDatatable() {
                 <MyDataTable
                     columns={["id", "name", "receita", "despesa", "total"]}
                     data={data}
-                    onDeleteSelected={(deletedItems) => {
-                        deletedItems.forEach(item => console.log(`Deleted: ${item.name}`));
+                    onDeleteSelected={(i) => {
+                        deleteAPIFormaPagamento(i);
                     }}
                 />
             </CardContent>

@@ -1,10 +1,19 @@
 import { Button } from "@/components/ui/button";
-import { Table } from "@/components/ui/table";
+import { Table, TableBody } from "@/components/ui/table";
 import { MyDataTableProps } from "@/types/my_data_table/my_data_table_props";
 import { useMyDataTableSortable } from "@/hooks/my_data_table/my_data_table_use_sortable_table";
 import { useMyDataTableSelectable } from "@/hooks/my_data_table/my_data_table_use_selectable_items";
 import { MyDataTableHeader } from "./my_data_table_header";
 import { MyDataTableRowItem } from "./my_data_table_row_item";
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+    DialogClose
+} from "@/components/ui/dialog"
 
 export function MyDataTable<T extends { id: number }>({
     columns,
@@ -16,38 +25,52 @@ export function MyDataTable<T extends { id: number }>({
 
     const handleDeleteSelected = () => {
         const itemsToDelete = items.filter((item) => selectedItems.has(item.id));
-        const remainingItems = deleteSelectedItems(selectedItems);
+        deleteSelectedItems(selectedItems);
         if (onDeleteSelected) {
-            onDeleteSelected(itemsToDelete);
+            itemsToDelete.forEach((item) => {
+                onDeleteSelected(item);
+            })
         }
     };
 
     return (
         <>
-            <Button 
-                onClick={handleDeleteSelected} 
-                disabled={selectedItems.size === 0} 
-                className="mb-4"
-            >
-                Deletar Selecionados
-            </Button>
             <Table>
-                <MyDataTableHeader
-                    columns={columns}
-                    selectAll={selectAll}
-                    onToggleSelectAll={toggleSelectAll}
-                    onSort={sortItems}
-                />
-                {items.map((item) => (
-                    <MyDataTableRowItem
-                        key={item.id}
-                        item={item}
+                <TableBody>
+                    <MyDataTableHeader
                         columns={columns}
-                        isSelected={selectedItems.has(item.id)}
-                        onToggleSelect={toggleSelectItem}
+                        selectAll={selectAll}
+                        onToggleSelectAll={toggleSelectAll}
+                        onSort={sortItems}
                     />
-                ))}
+                    {items.map((item) => (
+                        <MyDataTableRowItem
+                            key={item.id}
+                            item={item}
+                            columns={columns}
+                            isSelected={selectedItems.has(item.id)}
+                            onToggleSelect={toggleSelectItem}
+                        />
+                    ))}
+                </TableBody>
             </Table>
+
+            <Dialog>
+                <DialogTrigger className="mt-6" disabled={selectedItems.size === 0} asChild>
+                    <Button disabled={selectedItems.size === 0}>Deletar selecionados</Button>
+                </DialogTrigger>
+                <DialogContent>
+                    <DialogHeader>
+                        <DialogTitle>Deletar selecionados</DialogTitle>
+                        <DialogDescription>
+                            Tem certeza que deseja deletar os itens selecionados?
+                        </DialogDescription>
+                    </DialogHeader>
+                    <DialogClose asChild>
+                        <Button onClick={handleDeleteSelected} disabled={selectedItems.size === 0} variant="destructive" className="mt-2">Deletar</Button>
+                    </DialogClose>
+                </DialogContent>
+            </Dialog>
         </>
     );
 }

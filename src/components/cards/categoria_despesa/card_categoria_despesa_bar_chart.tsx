@@ -1,5 +1,5 @@
 import { CardDescription, CardHeader } from "@/components/ui/card";
-import getCategoriaDespesas from "@/hooks/categoria_despesas/get_categoria_despesas";
+import getCategoriaDespesas from "@/hooks/categoria_despesas/useGetCategoriaDespesas";
 import CategoriaDespesaBarChart from "@/components/charts/categoria_despesa/categoria_despesa_bar_chart";
 import { useState, useEffect } from "react";
 import CategoriaDespesaProps from '@/types/categoria_despesa_props';
