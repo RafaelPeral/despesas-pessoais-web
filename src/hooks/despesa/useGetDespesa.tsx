@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import DespesaProps from "@/types/despesa_props";
 
 export default function useGetDespesa() {
-    const [data, setData] = useState<DespesaProps[] | null>(null);
+    const [data, setData] = useState<DespesaProps | null>(null);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
@@ -11,7 +11,7 @@ export default function useGetDespesa() {
             try {
                 const repo = await getAPIDespesa();
                 if (repo && repo.data) {
-                    setData(repo.data.data as DespesaProps[]);
+                    setData(repo.data);
                 } else {
                     setError("Dados não encontrados.");
                 }

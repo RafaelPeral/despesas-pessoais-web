@@ -1,0 +1,60 @@
+import React from 'react';
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
+import { CardContent } from '../ui/card';
+import { Button } from '@/components/ui/button'
+import useChartExport from '@/hooks/chart/use_chart_export';
+
+interface DataItem {
+  name: string;
+  value: number;
+}
+
+interface PieChartComponentProps {
+  data: DataItem[];
+}
+
+// Cores para cada seção do gráfico
+export const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#A28EFF', '#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF00FF', '#00FFFF'];
+
+const PieChartComponent: React.FC<PieChartComponentProps> = ({ data }) => {
+
+  const { chartRef, exportChart } = useChartExport();
+
+  return (
+    <CardContent>
+      <ResponsiveContainer width="120%" height={400}>
+          <PieChart ref={chartRef}>
+            <Tooltip />
+            <Pie
+              data={data}
+              dataKey="value"
+              nameKey="name"
+              outerRadius={100}
+              fill="#8884d8"
+              labelLine={false}
+            >
+              {data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
+          </PieChart>
+      </ResponsiveContainer>
+      <div style={{ display: 'flex', flexDirection: 'column', marginTop: '10px' }}>
+        {data.map((entry, index) => (
+            <div key={`legend-${index}`} style={{ display: 'flex', alignItems: 'center' }}>
+            <div style={{
+                width: '12px',
+                height: '12px',
+                backgroundColor: COLORS[index % COLORS.length],
+                marginRight: '8px'
+            }} />
+            <span>{entry.name}: {entry.value}</span>
+            </div>
+        ))}
+      </div>
+      <Button onClick={() => exportChart()}>Exportar grafico</Button>
+    </CardContent>
+  );
+};
+
+export default PieChartComponent;

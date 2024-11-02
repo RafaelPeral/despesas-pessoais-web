@@ -22,13 +22,14 @@ export default function CardDespesaDatatable() {
         );
     }
 
-    if (data.length === 0) {
+    if (!data.data || data.data.length === 0) {
         return (
             <CardHeader>
                 <CardDescription>Nenhuma despesa encontrada.</CardDescription>
             </CardHeader>
         );
     }
+
 
     return (
         <>
@@ -38,7 +39,7 @@ export default function CardDespesaDatatable() {
             <CardContent>
                 <MyDataTable
                     columns={["id", "categoria", "name", "valor", "date", "forma_pagamento_name"]}
-                    data={data}
+                    data={data.data}
                     onDeleteSelected={(i) => deleteAPIDespesa(i)}
                 />
             </CardContent>

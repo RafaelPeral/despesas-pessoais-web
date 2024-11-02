@@ -3,15 +3,15 @@ import { useEffect, useState } from "react";
 import ReceitaProps from "@/types/receita_props";
 
 export default function useGetReceita() {
-    const [data, setData] = useState<ReceitaProps[] | null>(null);
+    const [data, setData] = useState<ReceitaProps | null>(null);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const repo = await getAPIReceita();
-                if (repo && repo.data && repo.data.data) {
-                    setData(repo.data.data as ReceitaProps[]);
+                if (repo && repo.data) {
+                    setData(repo.data);
                 } else {
                     setError("Dados não encontrados.");
                 }

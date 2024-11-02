@@ -15,7 +15,7 @@ export default function CardReceitaDatatable() {
         );
     }
 
-    if (!data) {
+    if (!data){
         return (
             <CardHeader>    
                 <CardDescription>Carregando...</CardDescription>
@@ -23,7 +23,7 @@ export default function CardReceitaDatatable() {
         );
     }
 
-    if (data.length === 0) {
+    if (!data.data || data.data.length === 0) {
         return (
             <CardHeader>
                 <CardDescription>Nenhuma receita encontrada.</CardDescription>
@@ -39,7 +39,7 @@ export default function CardReceitaDatatable() {
             <CardContent>
                 <MyDataTable 
                     columns={["id", "categoria", "name", "valor", "date", "forma_pagamento_name"]}
-                    data={data} 
+                    data={data.data} 
                     onDeleteSelected={( i ) => {
                         deleteAPIReceita(i)
                     }}

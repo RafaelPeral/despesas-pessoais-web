@@ -1,7 +1,7 @@
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { CardContent } from "@/components/ui/card";
 import { ChartContainer } from "@/components/ui/chart";
-import { ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { ChartTooltipContent } from "@/components/ui/chart";
 import useChartExport from "@/hooks/chart/use_chart_export";
 import { type ChartConfig } from "@/components/ui/chart"
 import { Button } from "@/components/ui/button";
