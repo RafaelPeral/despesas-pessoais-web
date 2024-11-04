@@ -22,7 +22,7 @@ const CategoriaReceitaBarChart = ({ data }: CategoriaReceitaBarChartProps) => {
 
     return (
         <CardContent className="p-4">
-            <h2 className="text-xl font-semibold mb-4">Gráfico de Forma de Pagamento</h2>
+            <h2 className="text-xl font-semibold mb-4">Gráfico de Categorias de Receitas</h2>
             <div ref={chartRef}>
                 <ResponsiveContainer width="100%" height={400}>
                     <ChartContainer config={chartConfig}>

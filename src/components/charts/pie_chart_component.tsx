@@ -22,23 +22,25 @@ const PieChartComponent: React.FC<PieChartComponentProps> = ({ data }) => {
 
   return (
     <CardContent>
-      <ResponsiveContainer width="120%" height={400}>
-          <PieChart ref={chartRef}>
-            <Tooltip />
-            <Pie
-              data={data}
-              dataKey="value"
-              nameKey="name"
-              outerRadius={100}
-              fill="#8884d8"
-              labelLine={false}
-            >
-              {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-              ))}
-            </Pie>
-          </PieChart>
-      </ResponsiveContainer>
+      <div ref={chartRef}>
+        <ResponsiveContainer width="100%" height={400}>
+            <PieChart>
+              <Tooltip />
+              <Pie
+                data={data}
+                dataKey="value"
+                nameKey="name"
+                outerRadius={100}
+                fill="#8884d8"
+                labelLine={false}
+              >
+                {data.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Pie>
+            </PieChart>
+        </ResponsiveContainer>
+      </div>
       <div style={{ display: 'flex', flexDirection: 'column', marginTop: '10px' }}>
         {data.map((entry, index) => (
             <div key={`legend-${index}`} style={{ display: 'flex', alignItems: 'center' }}>
@@ -52,7 +54,7 @@ const PieChartComponent: React.FC<PieChartComponentProps> = ({ data }) => {
             </div>
         ))}
       </div>
-      <Button onClick={() => exportChart()}>Exportar grafico</Button>
+      <Button variant="outline" className="mt-4" onClick={exportChart}>Exportar grafico</Button>
     </CardContent>
   );
 };

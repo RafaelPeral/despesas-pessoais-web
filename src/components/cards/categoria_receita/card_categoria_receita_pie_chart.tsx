@@ -37,9 +37,10 @@ export default function CardCategoriaReceitaPieChart() {
     return (
         <>
             <CardHeader>
-                <CardDescription>Categorias de Receitas</CardDescription>
+                <CardDescription>Categorias de Receitas - Grafico de Pizza</CardDescription>
             </CardHeader>
             <CardContent>
+                <h2 className="text-xl font-semibold mb-4">Gráfico de Categorias de Receitas</h2>
                 <PieChartComponent data={formattedData} />
             </CardContent>
         </>

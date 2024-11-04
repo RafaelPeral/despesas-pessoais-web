@@ -41,6 +41,7 @@ export default function CardCategoriaDespesaPieChart() {
                 <CardDescription>Despesas por categoria</CardDescription>
             </CardHeader>
             <CardContent>
+                <h2 className="text-xl font-semibold mb-4">Gráfico de Categorias de Despesas</h2>
                 <PieChartComponent data={formattedData} />
             </CardContent>
         </>

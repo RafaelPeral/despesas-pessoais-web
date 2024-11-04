@@ -32,7 +32,7 @@ export default function CardCategoriaReceitaBarChart() {
     return (
         <>
             <CardHeader>
-                <CardDescription>Categoria de Receita - gráfico de barras</CardDescription>
+                <CardDescription>Categoria de Receita - Gráfico de barras</CardDescription>
             </CardHeader>
             <CategoriaReceitaBarChart data={data} />
         </>

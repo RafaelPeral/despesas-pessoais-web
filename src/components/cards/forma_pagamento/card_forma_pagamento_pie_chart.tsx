@@ -40,6 +40,7 @@ export default function CardFormaPagamentoPieChart() {
                 <CardDescription>Formas de pagamento</CardDescription>
             </CardHeader>
             <CardContent>
+                <h2 className="text-xl font-semibold mb-4">Gráfico de Formas de Pagamento</h2>
                 <PieChartComponent data={formattedData} />
             </CardContent>
         </>

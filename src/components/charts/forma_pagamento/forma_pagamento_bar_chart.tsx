@@ -44,7 +44,7 @@ const FormaPagamentoBarChart = ({ data }: FormaPagamentoBarChartProps) => {
           <ChartContainer config={chartConfig}>
             <BarChart data={data}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey='nome' />
+              <XAxis dataKey='name' />
               <YAxis />
               <ChartTooltip content={<ChartTooltipContent />} />
               <Legend />
