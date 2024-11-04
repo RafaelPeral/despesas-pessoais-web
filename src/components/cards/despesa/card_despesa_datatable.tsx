@@ -22,7 +22,7 @@ export default function CardDespesaDatatable() {
         );
     }
 
-    if (!data.data || data.data.length === 0) {
+    if (!data.data) {
         return (
             <CardHeader>
                 <CardDescription>Nenhuma despesa encontrada.</CardDescription>

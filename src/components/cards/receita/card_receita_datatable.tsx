@@ -23,7 +23,7 @@ export default function CardReceitaDatatable() {
         );
     }
 
-    if (!data.data || data.data.length === 0) {
+    if (!data.data) {
         return (
             <CardHeader>
                 <CardDescription>Nenhuma receita encontrada.</CardDescription>
