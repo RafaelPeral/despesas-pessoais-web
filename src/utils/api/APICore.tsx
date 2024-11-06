@@ -1,4 +1,4 @@
-const BASE_PATH = "http://127.0.0.1:5000";
+const BASE_PATH = "https://despesas-pessoais-api.onrender.com";
 
 export const getAPIFormaPagamento = async () => {
     try {
