@@ -132,7 +132,7 @@ export const addAPICategoriaDespesa = async (data: any) => {
 
 export const deleteAPIReceita = async (data: any) => {
     try {
-        const response = await fetch(`${BASE_PATH}/delete_by_name_receita`, {
+        const response = await fetch(`${BASE_PATH}/delete_by_id_receita`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -148,7 +148,7 @@ export const deleteAPIReceita = async (data: any) => {
 
 export const deleteAPIDespesa = async (data: any) => {
     try {
-        const response = await fetch(`${BASE_PATH}/delete_by_name_despesa`, {
+        const response = await fetch(`${BASE_PATH}/delete_by_id_despesa`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -164,7 +164,7 @@ export const deleteAPIDespesa = async (data: any) => {
 
 export const deleteAPIFormaPagamento = async (data: any) => {
     try {
-        const response = await fetch(`${BASE_PATH}/delete_by_name_forma_pagamento`, {
+        const response = await fetch(`${BASE_PATH}/delete_by_id_forma_pagamento`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -180,7 +180,7 @@ export const deleteAPIFormaPagamento = async (data: any) => {
 
 export const deleteAPICategoriaReceita = async (data: any) => {
     try {
-        const response = await fetch(`${BASE_PATH}/delete_by_name_categoria_receita`, {
+        const response = await fetch(`${BASE_PATH}/delete_by_id_categoria_receita`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -196,7 +196,7 @@ export const deleteAPICategoriaReceita = async (data: any) => {
 
 export const deleteAPICategoriaDespesa = async (data: any) => {
     try {
-        const response = await fetch(`${BASE_PATH}/delete_by_name_categoria_despesa`, {
+        const response = await fetch(`${BASE_PATH}/delete_by_id_categoria_despesa`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
