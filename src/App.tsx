@@ -5,7 +5,7 @@ import Manager from '@/components/manager/manager'
 export default function App() {
   return (
     <ItemProvider>
-      <div className="flex flex-col md:flex-row ">
+      <div className="flex flex-col md:flex-row w-screen">
         <div className='max-h-16 md:h-auto'>
           <MySidebar />
         </div>
