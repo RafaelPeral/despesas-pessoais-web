@@ -12,7 +12,7 @@ export default function MobileSidebar() {
 
     return (
         <div className="w-full h-16 fixed items-center top-0 flex justify-between px-4">
-            <Sheet>
+            <Sheet open={open} onOpenChange={setOpen}>
                 <SheetTrigger asChild>
                     <Button variant="ghost">
                         <PanelBottom/>
@@ -27,7 +27,7 @@ export default function MobileSidebar() {
                         </Sidebar>
                         <div className="flex flex-col mb-6">
                            {open && <Toggle />}
-                            <MySidebarContent/>
+                            <MySidebarContent setOpen={setOpen}/>
                             <MySidebarFooter 
                                 userName="Rafael Peral"
                                 src_avatar="https://avatars.githubusercontent.com/u/168774687?v=4"

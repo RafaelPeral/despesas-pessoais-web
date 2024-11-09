@@ -4,7 +4,7 @@ import { navMain } from "@/components/my_sidebar/nav_main";
 import { ChevronRight } from "lucide-react";
 import { Separator } from "@radix-ui/react-separator";
 
-export default function MySidebarContent() {
+export default function MySidebarContent( {setOpen}: any) {
     return (
         <SidebarGroup className="h-full">
             <SidebarGroupLabel>Platform</SidebarGroupLabel>
@@ -20,7 +20,7 @@ export default function MySidebarContent() {
                                 </SidebarMenuButton>
                             </CollapsibleTrigger>
                             <CollapsibleContent>
-                                <SidebarMenuSub>
+                                <SidebarMenuSub onClick={() => setOpen(false)}>
                                     {item.items && item.items}
                                 </SidebarMenuSub>
                             </CollapsibleContent>
