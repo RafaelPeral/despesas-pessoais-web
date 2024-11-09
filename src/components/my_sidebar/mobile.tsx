@@ -12,7 +12,7 @@ export default function MobileSidebar() {
 
     return (
         <div className="w-full h-16 fixed items-center top-0 flex justify-between px-4">
-            <Sheet open={open} onOpenChange={setOpen}>
+            <Sheet open={window.innerWidth < 768 && open} onOpenChange={setOpen}>
                 <SheetTrigger asChild>
                     <Button variant="ghost">
                         <PanelBottom/>
