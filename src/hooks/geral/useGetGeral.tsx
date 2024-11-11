@@ -19,7 +19,7 @@ export const useGetGeral = (): [PieChartComponentProps | null, GeralError[]] => 
                 setData({data: [
                     { name: 'Despesa', value: fetchedData[0]?.total || 0 },
                     { name: 'Receita', value: fetchedData[1]?.total || 0 },
-                    { name: 'Monstante', value: (fetchedData[1]?.total || 0) - (fetchedData[0]?.total || 0) }
+                    { name: 'Montante', value: (fetchedData[1]?.total || 0) - (fetchedData[0]?.total || 0) }
                 ]});
             } catch {
                 setError([errordespesa, erroreceita]);
