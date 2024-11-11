@@ -5,7 +5,7 @@ export default function Geral() {
     return (
         <div>
             <Add add={<CardGeralPieChart/>}>
-                Adicionar Tabela de Formas de Pagamento
+                Adicionar Pie Chart Geral
             </Add>
         </div>
     )

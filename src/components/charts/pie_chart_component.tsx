@@ -3,21 +3,11 @@ import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
 import { CardContent } from '../ui/card';
 import { Button } from '@/components/ui/button'
 import useChartExport from '@/hooks/chart/use_chart_export';
+import {PieChartComponentProps} from '@/types/pie_chart';
 
-interface DataItem {
-  name: string;
-  value: number;
-}
-
-interface PieChartComponentProps {
-  data: DataItem[];
-}
-
-// Cores para cada seção do gráfico
 export const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#A28EFF', '#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF00FF', '#00FFFF'];
 
 const PieChartComponent: React.FC<PieChartComponentProps> = ({ data }) => {
-
   const { chartRef, exportChart } = useChartExport();
 
   return (
